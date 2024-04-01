@@ -13,7 +13,8 @@ class Todo(db.Model):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    todo_list = Todo.query.all()
+    return render_template('index.html', todo_list=todo_list)
 
 @app.route('/about')
 def about():
