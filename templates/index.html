@@ -21,6 +21,15 @@
     {% for todo in todo_list %}
         <p>{{ todo.id }} | {{ todo.title }}</p>
 
+        {% if todo.complete == False %}
+            <span>Unchecked</span>
+        {% else %}
+            <span>Checked</span>
+        {% endif %}
+
+        <a href="/">Update</a>
+        <a href="/">Delete</a>
+
     {% endfor %}
     
 </body>
